@@ -1,0 +1,55 @@
+# AI Math Reasoning Assistant (Fixed Service)
+
+This is a fixed and improved version of the AI Math Reasoning Assistant backend service.
+
+## Features
+- Chain-of-Thought and Tree-of-Thought question generation
+- Reasoning validation
+- Difficulty scaling
+- Robust FastAPI implementation with CORS enabled
+- Health check endpoint
+
+## Running the App with Docker
+
+To build and run the Docker container for this service:
+
+```bash
+docker build -t ai-math-service .
+docker run -p 8000:8000 ai-math-service
+```
+
+## Running the App Natively (Development)
+
+1. **Install Dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+2. **Run the Application**:
+   ```bash
+   python main.py
+   ```
+   The application will be accessible at `http://localhost:8000`.
+
+## API Endpoints
+
+- `POST /generate-question` - Generate mathematical questions
+- `POST /validate-solution` - Validate solution accuracy
+- `GET /scale-difficulty` - Assess and scale difficulty
+- `GET /health` - System health check
+- `GET /` - Root endpoint with API information
+
+## Configuration
+
+Environment variables can be used to configure the application:
+- `HOST`: The host address to bind to (default: `0.0.0.0`)
+- `PORT`: The port to listen on (default: `8000`)
+- `UVICORN_RELOAD`: Set to `true` for auto-reloading in development (default: `false`)
+
+## System Requirements
+
+- Python 3.11+
+- 4 GB RAM
+- Internet connection for AI features (if external APIs are used)
+
+
